@@ -38,12 +38,12 @@ Use blank lines in functions, sparingly, to indicate logical sections.
 
 ### Imports
 
-Imports should usually be on separate lines, e.g.::
+Imports should usually be on separate lines, e.g.
 
     import os
     import sys
 
-but::
+but
 
     form subprocess import Popen, PIPE
 
@@ -70,7 +70,7 @@ Avoid extraneous whitespace in the following situations:
 - Immediately before the open parenthesis that starts an indexing or slicing:
 - More than one space around an assignment (or other) operator to
   align it with another.
-  
+
 Other Recommendations
 
 - Always surround these binary operators with a single space on
@@ -97,13 +97,13 @@ comments should be separated by at least two spaces from the statement.
 They should start with a # and a single space.
 
 For docstring, the """ that ends a multiline docstring should be on a 
-line by itself, and preferably preceded by a blank line, e.g.::
+line by itself, and preferably preceded by a blank line, e.g.
 
-  """Return a foobang
+    """Return a foobang
 
-  Optional plotz says to frobnicate the bizbaz first.
+    Optional plotz says to frobnicate the bizbaz first.
 
-  """
+    """
 
 For one liner docstrings, it's okay to keep the closing """ on the same
 line.
@@ -176,13 +176,13 @@ Styles stolen from Scheme-style
 
 ### Indent subexpressions equally
 
-My note: that in Python, it usually looks bad to write something like the following Scheme::
+My note: that in Python, it usually looks bad to write something like the following Scheme:
 
     (list (foo) 
           (bar) 
           (baz)) 
 
-But in Python::
+But in Python:
     
     list = lambda : [foo,
                      bar,
@@ -190,13 +190,13 @@ But in Python::
 
 This is very hard to type.
 
-If you only use 2 spaces to indent (and want to save typing), you get::
+If you only use 2 spaces to indent (and want to save typing), you get:
 
   list = lambda : [foo,
     bar,
     baz,]
 
-This looks ugly.  Thus we prefer to break the line::
+This looks ugly.  Thus we prefer to break the line:
 
   list = lambda : [
     foo,
