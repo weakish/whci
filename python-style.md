@@ -18,7 +18,7 @@ Don't use tabs.
 
 ### Maximum line length
 
-79 characters.  
+79 characters.
 
 For flowing long blocks of text (docstrings or comments), limiting the
 length to 72 characters is recommended.
@@ -192,21 +192,22 @@ This is very hard to type.
 
 If you only use 2 spaces to indent (and want to save typing), you get:
 
-  list = lambda : [foo,
-    bar,
-    baz,]
+    list = lambda : [foo,
+      bar,
+      baz,]
 
 This looks ugly.  Thus we prefer to break the line:
 
-  list = lambda : [
-    foo,
-    bar,
-    baz,
-  ]
+    list = lambda : [
+      foo,
+      bar,
+      baz,
+    ]
 
 ### Break for one - break for all
 
 If you subexpressions onto multiple lines, put every subexpression on a single line. 
+
 
 Personal
 --------
