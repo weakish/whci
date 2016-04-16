@@ -215,7 +215,7 @@ Personal
 Try to use variables as constants when possible. Consider importing [const.py][].
 [const.py]: https://github.com/weakish/whci/blob/master/const.py
 
-Prefer tuple over list and dictionaries:
+Prefer tuple over list and dictionaries for immutable values:
 
 For example, use `namedtuple('Dict', 'x y')(1, 2)` for `{'x': 1, 'y': 2}`.
 
