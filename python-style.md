@@ -225,14 +225,13 @@ For example, use `namedtuple('Dict', 'x y')(1, 2)` for `{'x': 1, 'y': 2}`.
 * Don't use CamlCase as compound_variable names.  CamlCase is somewhat less
   readable, especially when the name includes acronyms or initialisms, e.g.
   `getACCVSURL` v.s. `get_a_C_CVS_URL`.  And you shouldn't need CamlCase to
-  shorten line length.  Also, `aVeryLongCmalCaseVariableName` is not_readable_at_all.
+  shorten line length.  Also, `aVeryLongCamlCaseVariableName` is not_readable_at_all.
 * Avoid global variables.
 
 ### Functions
 
 * Use pure functions when possible.
 * Prefer small functions.
-* Try to make functions look pure from outside when it's not pure inside.
 * Isolate side-effects.
 
 ### Branching and looping
