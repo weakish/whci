@@ -6,7 +6,9 @@ Foreword
 
 - This only reflects my personal tastes.  So
   just ignore them.  Even I myself doesn't follow this.
-- Use python 3.
+- Prefer python 3.5+ for [type hints][].
+
+[type hints]: https://docs.python.org/3/library/typing.html
 
 
 Styles stolen from PEP 8
