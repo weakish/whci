@@ -234,12 +234,6 @@ For example, use `namedtuple('Dict', 'x y')(1, 2)` for `{'x': 1, 'y': 2}`.
 * Prefer small functions.
 * Isolate side-effects.
 
-### Branching and looping
-
-* Prefer generator expression/map/reduce/filter/recursion
-  over for loop.
-* Prefer if/else ternary expression. 
-
 ### Modules
 
 * Use '_' prefixed names instead of ``__all__`` list.  This is simple and
