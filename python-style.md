@@ -76,8 +76,7 @@ Other Recommendations
   either side: assignment (=), augmented assignment (+=, -= etc.),
   comparisons (==, <, >, !=, <>, <=, >=, in, not in, is, is not),
   Booleans (and, or, not).
-
-- Use spaces around arithmetic operators 
+- Use spaces around arithmetic operators.
 - Don't use spaces around the '=' sign when used to indicate a
   keyword argument or a default parameter value.
 
@@ -95,7 +94,7 @@ An inline comment is a comment on the same line as a statement.  Inline
 comments should be separated by at least two spaces from the statement.
 They should start with a # and a single space.
 
-For docstring, the """ that ends a multiline docstring should be on a 
+For docstring, the """ that ends a multiline docstring should be on a
 line by itself, and preferably preceded by a blank line, e.g.
 
     """Return a foobang
@@ -114,10 +113,10 @@ letter oh), or 'I' (uppercase letter eye) as single character variable
 names.
 
 In some fonts, these characters are indistinguishable from the numerals
-one and zero. 
+one and zero.
 
 Since module names are mapped to file names, and some file systems are
-case insensitive and truncate long names, modules should have short, 
+case insensitive and truncate long names, modules should have short,
 all-lowercase names.  Underscores can be used in the module name if it
 improves readability.
 
@@ -140,7 +139,7 @@ breakage during use.
 
 Any function or method which is not both obvious and very short needs a
 doc string. Additionally, any externally accessible function or method regardless
-of length or simplicity needs a doc string. The doc string should include 
+of length or simplicity needs a doc string. The doc string should include
 what the function does and have detailed descriptions of the input and out
 put. It should not, generally, describe how it does it unless it's some
 complicated algorithm. For tricky code block/inline comments within the
@@ -151,7 +150,7 @@ a colon, and should use a uniform hanging indent of 2 or 4 spaces. The
 doc string should specify the expected types where specific types are required.
 A "Raises:" section should list all exceptions that can be raised by the
 function. The doc string for generator functions should use "Yields:"
-rather than "Returns:". 
+rather than "Returns:".
 
 Sometimes I do not describe input and output, since I use very_long_input_argument_name and doctests.
 
@@ -164,7 +163,7 @@ functionality. The main functionality should be in a main() function.
 In Python, pychecker, pydoc, and unit tests require modules to be importable.
 Your code should always check if __name__ == '__main__' before executing
 your main program so that the main program is not executed when the module
-is imported. 
+is imported.
 
 
 
@@ -175,14 +174,14 @@ Styles stolen from Scheme-style
 
 ### Indent subexpressions equally
 
-My note: that in Python, it usually looks bad to write something like the following Scheme:
+Note that in Python, it usually looks bad to write something like the following Scheme:
 
-    (list (foo) 
-          (bar) 
-          (baz)) 
+    (list (foo)
+          (bar)
+          (baz))
 
 But in Python:
-    
+
     list = lambda : [foo,
                      bar,
                      baz,]
@@ -205,15 +204,11 @@ This looks ugly.  Thus we prefer to break the line:
 
 ### Break for one - break for all
 
-If you subexpressions onto multiple lines, put every subexpression on a single line. 
+If you subexpressions onto multiple lines, put every subexpression on a single line.
 
 
 Personal
 --------
-
-### Indentation
-
-Use 2 spaces to indent.  (This goes against PEP 8, though Ruby and Lua defaults to 2 spaces.)
 
 ### Immutability
 
