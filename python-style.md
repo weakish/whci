@@ -22,9 +22,6 @@ Don't use tabs.
 
 79 characters.
 
-For flowing long blocks of text (docstrings or comments), limiting the
-length to 72 characters is recommended.
-
 The preferred way of wrapping long lines is by using Python's implied
 line continuation inside parentheses, brackets and braces.  If necessary,
 you can add an extra pair of parentheses around an expression, but
