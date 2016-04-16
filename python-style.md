@@ -238,18 +238,16 @@ For example, use `namedtuple('Dict', 'x y')(1, 2)` for `{'x': 1, 'y': 2}`.
 
 * Use '_' prefixed names instead of ``__all__`` list.  This is simple and
   straight up, and doesn't require the additional effort to maintain an
-  extra list. 
+  extra list.
 * Avoid use from import when possible.
 
 ### Tests
 
 Most of the time I just use doctest,
-since it's easy to maintain coherent code, test and documentation.
+since it's easy to maintain consistency of code, test and documentation.
 
 
 ### Classes
 
-Be classless.
-Well, this is not possible.
-But at least avoid writing `class`.
+Do not abuse `class`.
 We already have closures to conveniently implemented higher-order functions, and modules.
