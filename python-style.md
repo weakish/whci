@@ -224,10 +224,17 @@ For example, use `namedtuple('Dict', 'x y')(1, 2)` for `{'x': 1, 'y': 2}`.
 
 ### Variables
 
-* Don't use CamlCase as compound_variable names.  CamlCase is somewhat less
+* Don't use camlCase as compound_variable names.  CamlCase is somewhat less
   readable, especially when the name includes acronyms or initialisms, e.g.
   `getACCVSURL` v.s. `get_a_C_CVS_URL`.  And you shouldn't need CamlCase to
   shorten line length.  Also, `aVeryLongCamlCaseVariableName` is not_readable_at_all.
+
+* The only exception of the above rule is `ClassName`, because:
+
+    - Python itself already uses this style, e.g. `TypeError`.
+    - Class names usually begins with a capital.
+    - Class names are usually not long.
+
 * Avoid global variables.
 
 ### Functions
