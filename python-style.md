@@ -212,7 +212,9 @@ Personal
 
 ### Immutability
 
-Try to use variables as constants when possible. Consider importing [const.py][].
+Try to use variables as constants if necessary.
+Consider importing [const.py][].
+
 [const.py]: https://github.com/weakish/whci/blob/master/const.py
 
 Prefer tuple over list and dictionaries for immutable values:
