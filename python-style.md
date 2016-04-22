@@ -206,6 +206,49 @@ This looks ugly.  Thus we prefer to break the line:
 
 If you subexpressions onto multiple lines, put every subexpression on a single line.
 
+### `If` is always followed by `else`.
+
+Racket has `if` and `cond`.
+
+`if` always have an `else` clause.
+
+```racket
+(if test then texpr else fexpr)
+```
+
+And `cond` without an `else` clause will report an error
+if none of the question-expressions evaluates to `#true`.
+
+```racket
+(cond [question-expression answer-expression] ...)
+(cond [question-expression answer-expression]
+      ...
+      [else answer-expression])
+```
+
+This approach forces us to consider all cases.
+
+In Python, we can use `pass` in `else` to represent `do nothing`:
+
+```python
+if test:
+    do_something
+else:
+    pass
+```
+
+We raise an Exception in `else`
+when using `if` to express `cond` without `else` in Racket.
+
+```python
+if boolean is True:
+    print("True")
+elif boolean is False:
+    print("False")
+else:
+    raise TypeError("boolean is not a `bool`.")
+```
+
 
 Personal
 --------
@@ -260,12 +303,9 @@ since it's easy to maintain consistency of code, test and documentation.
 Do not abuse `class`.
 We already have closures to conveniently implemented higher-order functions, and modules.
 
-### pass
+### Use `pass` to end a block.
 
 If you need to write `end` in Ruby, consider write `pass` in Python.
-Function is an exception.
-If it already returns a value, do not need to write `pass`.
-Otherwise, use `return None`.
 
 For example, in the following Ruby code:
 
@@ -361,7 +401,7 @@ But using `pass` still has two advantages:
 
 - A decent editor/IDE will indent correctly if you typed `pass`.
 
-For the second `pass`, I think using `return None` is more explicit.
+For the second `pass`, I once thought using `return None` was more explicit.
 
 ```python
 def f():
@@ -372,8 +412,51 @@ def f():
     return None
 ```
 
-And if `f` already has a `return` clause,
-I think it is unnecessary to write `pass`.
+And if `f` already ends with a `return` or `raise` clause,
+I thought it was unnecessary to write `pass`.
+
+But since Python allows nested function definition, we still need `pass`.
+
+```python
+def f():
+    # do something
+    return None
+
+def g():
+    # Is `g` inside `f` or not?
+    pass
+```
+
+If `f()` is a top-level function, and your code adheres to PEP8:
+
+> Surround top-level function and class definitions with two blank lines.
+
+You may omit the second `pass`.
+
+But PEP8 also said:
+
+> Extra blank lines may be used (sparingly)
+> to separate groups of related functions.
+
+For example:
+
+```python
+def f():
+    # do something
+
+
+    def g():
+        pass
+
+    def h():
+        pass
+
+
+    def other():
+        pass
+```
+
+Thus using `pass` is preferred.
 
 P.S. If breaking PEP8 is allowed, we can make it more like Ruby code:
 
