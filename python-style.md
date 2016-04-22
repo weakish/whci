@@ -255,8 +255,153 @@ For example, use `namedtuple('Dict', 'x y')(1, 2)` for `{'x': 1, 'y': 2}`.
 Most of the time I just use doctest,
 since it's easy to maintain consistency of code, test and documentation.
 
-
 ### Classes
 
 Do not abuse `class`.
 We already have closures to conveniently implemented higher-order functions, and modules.
+
+### pass
+
+If you need to write `end` in Ruby, consider write `pass` in Python.
+Function is an exception.
+If it already returns a value, do not need to write `pass`.
+Otherwise, use `return None`.
+
+For example, in the following Ruby code:
+
+```ruby
+def f
+    for i in 0...10
+        i = i * 2
+        print(i)
+    end
+end
+```
+
+And the equivalent Python code:
+
+```python
+def f():
+    for i in range(10):
+        i = i * 2
+        print(i)
+```
+
+With one wrong keystroke (`TAB`):
+
+```python
+def f():
+    for i in range(10):
+        i = i * 2
+    print(i)
+```
+
+The above code is also valid.
+
+To avoid this kind of mistakes, we can use `pass` for `end` in Python:
+
+```python
+def f():
+    for i in range(10):
+        i = i * 2
+        print(i)
+        pass
+    pass
+```
+
+With one wrong keystroke (`TAB`):
+
+```python
+def f():
+    for i in range(10):
+        i = i * 2
+    print(i)
+        pass
+    pass
+```
+
+Python will refuse to work:
+
+```python
+IndentationError: unexpected indent
+```
+
+However, python will not always catch unintended indentation even with `pass`.
+
+Suppose we intend to write:
+
+```python
+def g():
+    for i in range(10):
+        i = i * 2
+        pass
+    print(i)
+    pass
+```
+
+With one wrong keystroke (`TAB`):
+
+```python
+def g():
+    for i in range(10):
+        i = i * 2
+        pass
+        print(i)
+    pass
+```
+
+Python will *not* refuse to work.
+
+But using `pass` still has two advantages:
+
+- It still provides visual hint.
+
+    If you think `pass` as the last clause of an indented block,
+    `print(i)` looks wired to you in the above code.
+
+- A decent editor/IDE will indent correctly if you typed `pass`.
+
+For the second `pass`, I think using `return None` is more explicit.
+
+```python
+def f():
+    for i in range(10):
+        i = i * 2
+        print(i)
+        pass
+    return None
+```
+
+And if `f` already has a `return` clause,
+I think it is unnecessary to write `pass`.
+
+P.S. If breaking PEP8 is allowed, we can make it more like Ruby code:
+
+```python
+def f():
+    for i in range(10):
+        i = i * 2
+        print(i)
+    pass
+pass
+```
+
+We can even use `end`:
+
+```python
+end = None
+def f():
+    for i in range(10):
+        i = i * 2
+        print(i)
+    end
+end
+```
+
+But if `print(i)` is wrongly indented, Python still works.
+So this is less useful than the above approach.
+
+
+
+
+
