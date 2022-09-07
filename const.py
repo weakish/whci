@@ -17,6 +17,9 @@ Note:
 The original version from activestate doesn't work for python 3.
 This version should work on python 3 and (not very early) python 2.
 I've tested it on python 2.6 and python 3.1.
+
+PEP 591 introduces the Final qualifier for type hint.
+Use it instead.
 '''
 
 class _const:
