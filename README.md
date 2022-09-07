@@ -1,4 +1,2 @@
-Sometimes I feel resistant to idioms and syntax of a programing language (I'm watching you, Python).
-
-Currently it contains `const.py`.
+Archived since `const.py` included in this repo is irrelevant after PEP 591 introduces the Final qualifier.
 
